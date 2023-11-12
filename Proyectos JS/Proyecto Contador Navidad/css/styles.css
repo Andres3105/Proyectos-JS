@@ -1,0 +1,84 @@
+*{
+    font-family: 'Oswald', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-image: url(https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/12/fondo-pantalla-navidad_0.jpg?tf=3840x);
+    background-size: cover;
+}
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+}
+.cuentaRegresiva{
+    display: flex;
+    font-weight: 900;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cuentaRegresiva > div{
+    font-size: 1.5rem;
+}
+.mensaje{
+    margin-bottom: 40px;
+}
+.mensaje > span{
+    font-size: 3rem;
+    color: rgb(238, 3, 3);
+    font-weight: 900;
+}
+#dias, #horas, #minutos, #segundos{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    justify-content: center;
+    width: 80px;
+    padding: 20px;
+    height: 35px;
+    border-radius: 50px;
+    border:  2px solid white;
+}
+.contenedor-botones > .botones.red{
+    background-color: red;
+    color: white;
+}
+
+
+.contenedor-botones > .botones.red:hover{
+    background-color: rgb(255, 255, 255);
+    color: red;
+}
+.contenedor{
+    text-align: center;
+}
+.botones{
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 50px;
+    color: red;
+}
+
+.contenedor-2{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.contenedor{
+    display: grid;
+}
+.contenedor-2 > img{
+    z-index: -200;
+    width: 100%;
+}

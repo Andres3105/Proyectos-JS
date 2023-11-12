@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(72, 218, 201);
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/11e62ffb-3ee1-4d8c-b2b0-fa9fba112532/der1ibo-f42dd125-2d6d-43b5-84d1-1b2af70a897d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzExZTYyZmZiLTNlZTEtNGQ4Yy1iMmIwLWZhOWZiYTExMjUzMlwvZGVyMWliby1mNDJkZDEyNS0yZDZkLTQzYjUtODRkMS0xYjJhZjcwYTg5N2QucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.s-T6RnaypSEzIuJhIYnU7qQqNUDfMLY2XqunEos0WsU);
+    background-size: cover;
+}
+.puntaje{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17rem;
+}
+.item{
+    background-color: rgb(198, 198, 198);
+    width: 50px;
+    height: 45px;
+    cursor: pointer;
+    -webkit-mask-image: url(../img/estrella.svg);
+    mask-image: url(../img/estrella.svg);
+}
+.item.selec{
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}

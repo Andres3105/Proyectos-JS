@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Contador Navideño</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="principal">
+        <div id="contenedor-cuenta" class="contenedor">
+            <div class="mensaje"><span id="mensaje" >Faltan para navidad</span></div>
+            <div class="cuentaRegresiva">
+                <div class="contenedor-dias">
+                    <div id="dias"></div>
+                    <div>D</div>
+                </div>
+                <div class="contenedor-horas">
+                    <div id="horas"></div>
+                    <div>H</div>
+                </div>
+                <div class="contenedor-minutos">
+                    <div id="minutos"></div>
+                    <div>M</div>
+                </div>
+                <div class="contenedor-segundos">
+                    <div id="segundos"></div>
+                    <div>S</div>
+                </div>
+            </div>
+            <div class="contenedor-botones">
+                <button id="boton1" class="botones" onclick="reproducirMusica()">Iniciar</button>
+                <button id="boton2" class="botones" onclick="detenerMusica()">Parar</button>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-2">
+        <div id="papa-noel">
+            <img id="imagen" src="img/papa_noel.png">
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

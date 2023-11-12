@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-image: url(https://www.xtrafondos.com/wallpapers/montana-en-la-naturaleza-canada-10154.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.calculadora{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    color: rgb(73, 76, 78);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 350px;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 0.5rem;
+}
+.pantalla{
+    grid-column: 1/5;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    font-size: 3rem;
+    text-align: right;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+}
+.boton{
+    background: rgb(94,113,150);
+    background: linear-gradient(180deg, rgba(94,113,150,1) 0%, rgba(125,130,156,1) 78%);
+    color: rgb(255, 255, 255);
+    border: 0;
+    padding: 1rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.boton:hover{
+    background-color: rgb(221, 180, 76);
+}
+#cero{
+    grid-column: span 2;
+}
+#igual{
+    grid-row: span 2;
+    background: rgb(94,113,150);
+    background: linear-gradient(180deg, rgba(94,113,150,1) 0%, rgba(61,84,206,1) 78%);
+}
+#igual:hover{
+    background-color: rgb(132, 167, 227);
+}

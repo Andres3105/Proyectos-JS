@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+    background-image: url(https://images.alphacoders.com/133/1337220.png);
+    background-size: cover;
+}
+.esqueletoOff{
+    width: 550px;
+    height: 600px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-image: url(../img/esqueleto2.png);
+}
+.esqueletoOff.on{
+    background-image: url(../img/esqueleto1.gif);
+}
+.esqueletoOnOff{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(245, 31, 3);
+    border-radius: 1vh;
+    border: 0.2rem solid rgb(255, 51, 0);
+    position: fixed;
+    color: rgb(255,255,255);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+.esqueletoOnOff:hover{
+    background-color: rgb(255, 11, 3);
+    cursor: pointer;
+}
