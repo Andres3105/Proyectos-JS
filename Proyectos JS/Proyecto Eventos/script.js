@@ -1,87 +1,90 @@
 let eventos = [];
-let info = []; 
+let arr = []; 
+const nombreEvento = document.querySelector("#nombreEvento")
+const fechaEvento = document.querySelector("#fechaEvento")
+const botonAgregar = document.querySelector("#agregar")
+const listaEventos = document.querySelector("#listaEventos")
 
-const nombreEvento = document.querySelector("#nombreEvento");
-const fechaEvento = document.querySelector("#fechaEvento");
-const añadir = document.querySelector("#añadir");
-const contenedorEventos = document.querySelector("#contenedorEventos");
 
-const memoria = cargar();
-try {
-    info = JSON.parse(memoria);
-} catch (error) {
-    info = [];
+const guardar = (datos) =>{
+    localStorage.setItem("lista", datos)
 }
-eventos = info ? [...info] : [];
-renderizarEventos();
+const cargar = () =>{
+    return localStorage.getItem("lista")
+}
 
-document.querySelector('form').addEventListener("submit", (e) =>{
-    e.preventDefault();
-    añadirEvento();
-});
+const json = cargar()
 
-añadir.addEventListener("click", (e) =>{
-    e.preventDefault();
-    añadirEvento();
-});
+document.querySelector("form").addEventListener("submit", e =>{
+    e.preventDefault()
+    agregarEvento()
+})
 
-function añadirEvento() {
+const diferenciaFecha = (fechaEvento) => {
+    let fechaDestino = new Date(fechaEvento)
+    let fechaActual = new Date()
+    let diferencia = fechaDestino.getTime() - fechaActual.getTime()
+    return Math.ceil(diferencia / (1000 * 3600 * 24))
+}
+
+
+function agregarEvento() {
     if (nombreEvento.value === "" || fechaEvento.value === "") {
-        return;
+        alert("No se admiten campos vacíos")
+        return
     }
-    if (diferenciaFechas(fechaEvento.value)<0) {
-        return;
+
+    if (diferenciaFecha(fechaEvento.value) < 0) {
+        alert("La fecha es anterior a la actual")
+        return
     }
+
     const nuevoEvento = {
-        id: Math.random().toString(36).slice(3),
-        nombre: nombreEvento.value,
-        fecha: fechaEvento.value,
-    };
-    eventos.unshift(nuevoEvento);
-    guardar(JSON.stringify(eventos));
-    nombreEvento.value = "";
-    renderizarEventos();
+        id: (Math.random() * 100).toString(36).slice(3),
+        nombre : nombreEvento.value,
+        fecha : fechaEvento.value
+    }
+
+    eventos.unshift(nuevoEvento)
+    guardar(JSON.stringify(eventos))
+
+    nombreEvento.value = ""
+
+    mostrarEventos();
 }
 
-function diferenciaFechas(fechaEvento) {
-    const fechaLimite = new Date(fechaEvento);
-    const fechaActual = new Date();
-    const diferencia = fechaLimite.getTime() - fechaActual.getTime();
-    const diasFaltantes = Math.ceil(diferencia / (1000 * 3600 * 24))
-    return diasFaltantes;
-}
-
-function renderizarEventos() {
+const mostrarEventos = () => {
     const eventosHTML = eventos.map((evento) => {
         return `
         <div class="evento">
             <div class="dias">
-                <span class="numeroDias">${diferenciaFechas(evento.fecha)}</span>
-                <span class="diasTexto">días</span>
-            </div>
-            <div class="nombreEvento">${evento.nombre}</div>
+                <span class="diasFaltantes">${diferenciaFecha(evento.fecha)}</span>
+                <span class="texto"><span>días</span> para</span>
+            </div> 
+            <div class="nombreEvento"><span>${evento.nombre}</span></div>
             <div class="fechaEvento">${evento.fecha}</div>
-            <div class="actions">
+            <div class="acciones">
                 <button data-id="${evento.id}" class="eliminar">Eliminar</button>
             </div>
         </div>
         `
-    });
-    contenedorEventos.innerHTML = eventosHTML.join("");
-    document.querySelectorAll(".eliminar").forEach(botonEliminar =>{
-        botonEliminar.addEventListener('click', e =>{
-            const id = botonEliminar.getAttribute('data-id');
-            eventos = eventos.filter(evento => evento.id !== id);
-            guardar();
-            renderizarEventos();
-        });
-    });
+    })
+    listaEventos.innerHTML = eventosHTML.join("")
+    document.querySelectorAll(".eliminar").forEach(button => {
+        button.addEventListener("click", () =>{
+            const id = button.getAttribute("data-id")
+            eventos = eventos.filter(evento => evento.id !== id)
+            guardar(JSON.stringify(eventos))
+            mostrarEventos()
+        })
+    })
 }
 
-function guardar(data) {
-    localStorage.setItem("items", data);
+try {
+    arr = JSON.parse(json)
+} catch (error) {
+    arr = []
 }
+eventos = arr? [...arr] : []
 
-function cargar() {
-    return localStorage.getItem("items");
-}
+mostrarEventos()

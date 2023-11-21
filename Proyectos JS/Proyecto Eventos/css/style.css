@@ -1,90 +1,136 @@
-.app {
-    max-width: 400px;
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
     display: flex;
+    background-color: #05AFF2;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.encabezado{
+    display: flex;
+    margin-top: 40px;
+    gap: 20px;
+    color: white;
+    font-weight: 900;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
-  }
-  
-  .form {
-    background-color: rgb(219, 207, 207);
-    border-radius: 20px;
-    padding: 20px;
-    width: 80%; 
-    box-sizing: border-box; 
-  }
-  
-  input {
-    width: calc(100% - 20px); 
-    border-radius: 15px;
-    border: 2px solid rgb(12, 197, 221);
-    margin-top: 10px;
-    padding: 8px;
-    box-sizing: border-box; 
-  }
-  
-  input[type="submit"] {
-    width: auto; 
-    margin-top: 15px;
-  }
-    
-  #contenedorEventos {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .evento {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    border: 2px solid blue;
-    margin-top: 15px;
-    border-radius: 20px;
-  }
-
-  #añadir{
-    background-color: skyblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3px;
-  }
-  
-  .dias {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.eventos{
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-  }
-  
-  .dias .numeroDias {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .dias .diasTexto {
-    font-size: 14px;
-  }
-  
-  .nombreEvento {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .fechaEvento {
-    font-size: 18px;
-  }
-  
-  .actions {
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F2F5FF;
+    box-shadow: 2px 2px 10px 2px beige;
+    width: 30vw;
+    border-radius: 30px;
+    padding: 50px;
+}
+form{
+    display:flex;
+    gap: 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+form > input{
+    padding: 15px;
+    border: 3px solid #1BB8FF;
+    border-radius: 20px;
+}
+form > .submit{
+    color: white;
+    font-size: 1.2rem;
+    background-color: #1BB8FF;
+}
+.listaEventos2{
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65vw;
+    box-shadow: 2px 2px 10px 4px beige;
+    background-color: #EFF8FF;
+    gap: 30px;
+}
+
+.evento > .acciones{
+    display: flex;
+    justify-content: center;
+}
+.acciones button{
+    padding: 15px;
+    background-color: #8BD93D;
+    color: #003821;
+    font-weight: 800;
+    border-radius: 5px;
+    height: 50px;
+    width: 95px;
+    border-style: none;
+    cursor: pointer;
+}
+.acciones button:hover{
+    color: white;
+    background-color: #d93d3d;
+}
+.evento {
+    border-radius: 30px;
+    width: 100%;
+    border: 3px solid #1BB8FF;
     display: flex;
     align-items: center;
-  }
-  
-  .actions .eliminar {
-    background-color: red;
-    color: #fff;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
-  }
+    justify-content: space-around;
+}
+.evento > .dias{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 10%;
+
+}
+.evento > .dias > .diasFaltantes{
+    font-weight: 900;
+    font-size: 50px;
+    color: #31A05B;
+}
+
+
+.evento .dias,
+.evento .nombreEvento,
+.evento .fechaEvento,
+.evento .acciones {
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+.evento .nombreEvento{
+    width: 30%;
+    font-size: 25px;
+}
+.evento .fechaEvento{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.evento .dias .texto > span{
+    display: flex;
+    flex-direction: column;
+}
+.creditos{
+    margin-top: 80px;
+}
